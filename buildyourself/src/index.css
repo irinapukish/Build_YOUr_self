@@ -11,3 +11,136 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.header {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border-radius: 10px;
+
+}
+
+.knopka {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 270px;
+  padding-left: 10px;
+}
+
+.background-container {
+  min-width: 600px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+img {
+  width: 100%; 
+  max-width: 500px;
+  height: auto; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+/* Kontener główny */
+.bmi-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Tytuł */
+.bmi-title {
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Grupa inputów */
+.bmi-input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Labelka */
+.bmi-label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Pole input */
+.bmi-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.bmi-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Grupa przycisków */
+.bmi-button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Przycisk */
+.bmi-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styl przycisku "Oblicz" */
+.bmi-button.calculate {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.bmi-button.calculate:hover {
+  background-color: #218838;
+}
+
+/* Styl przycisku "Resetuj" */
+.bmi-button.reset {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.bmi-button.reset:hover {
+  background-color: #c82333;
+}
+
+/* Wyniki BMI */
+.bmi-result {
+  margin-top: 30px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.bmi-result-value {
+  font-size: 20px;
+  color: #333;
+}
+
+.bmi-result-message {
+  font-size: 18px;
+  color: #666;
+}
