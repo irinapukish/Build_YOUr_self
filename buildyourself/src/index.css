@@ -20,13 +20,6 @@ code {
 
 }
 
-.knopka {
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 270px;
-  padding-left: 10px;
-}
-
 .background-container {
   min-width: 600px;
   border-bottom-left-radius: 10px;
@@ -41,10 +34,10 @@ img {
 }
 /* Kontener główny */
 .bmi-container {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: #d5e3d7;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   font-family: 'Arial', sans-serif;
@@ -120,27 +113,4 @@ img {
 .bmi-button.reset {
   background-color: #dc3545;
   color: #fff;
-}
-
-.bmi-button.reset:hover {
-  background-color: #c82333;
-}
-
-/* Wyniki BMI */
-.bmi-result {
-  margin-top: 30px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.bmi-result-value {
-  font-size: 20px;
-  color: #333;
-}
-
-.bmi-result-message {
-  font-size: 18px;
-  color: #666;
 }
