@@ -175,3 +175,35 @@ nav ul li a:hover {
 .li-faq{
   text-align: initial;
 }
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 2em;
+  color: #0053A4;
+}
+
+.date {
+  color: gray;
+  margin: 10px 0;
+}
+
+.content {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: #0053A4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
