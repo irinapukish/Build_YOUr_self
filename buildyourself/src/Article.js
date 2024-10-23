@@ -5,7 +5,7 @@ const Article = () => {
   return (
     <div className="container">
       <div>
-        <h1 className="title">Dlaczego regularne jedzenie jest ważne?</h1>
+        <h2 className="title">Dlaczego regularne jedzenie jest ważne?</h2>
         <p className="date">Styczeń 5, 2025</p>
         <p className="content">
           Regularne jedzenie to ważny, ale często trudny do wprowadzenia w życie nawyk.
@@ -17,7 +17,7 @@ const Article = () => {
         </p>
       </div>
       <div>
-        <h1 className="title">Jak nie podjadać siedząc w domu?</h1>
+        <h2 className="title">Jak nie podjadać siedząc w domu?</h2>
         <p className="date">Styczeń 12, 2025</p>
         <p className="content">
         Do tej pory w dni robocze najczęściej mieliśmy jakiś rytm dnia, w który należało wkomponować posiłki. 
@@ -30,7 +30,7 @@ const Article = () => {
         </p>
       </div>
       <div>
-      <h1 className="title">Jak ograniczyć cukier w diecie? 3 produkty, które szybko zamienisz na zdrowszy odpowiednik</h1>
+      <h2 className="title">Jak ograniczyć cukier w diecie? 3 produkty, które szybko zamienisz na zdrowszy odpowiednik</h2>
         <p className="date">Styczeń 19, 2025</p>
         <p className="content">
         Nadmiar cukru w diecie to krótka droga do różnych chorób: otyłości, cukrzycy, insulinooporności. 
@@ -41,7 +41,7 @@ const Article = () => {
         </p>
       </div>
       <div>
-        <h1 className="title">Jaka dieta jest dla mnie najlepsza?</h1>
+        <h2 className="title">Jaka dieta jest dla mnie najlepsza?</h2>
         <p className="date">Styczeń 26, 2025</p>
         <p className="content">
         Nie sądziłam, że to pytanie usłyszę tak często. 
@@ -51,7 +51,7 @@ const Article = () => {
         </p>
       </div>
       <div>
-        <h1 className="title">Dlaczego “dieta” 1000 kcal to zły pomysł</h1>
+        <h2 className="title">Dlaczego “dieta” 1000 kcal to zły pomysł</h2>
         <p className="date">Luty 2, 2025</p>
         <p className="content">
         Schemat najczęściej się powtarza: bardzo restrykcyjna dieta cud np. 1000 kcal, kilka miesięcy wyrzeczeń i głodówki, 
@@ -62,7 +62,7 @@ const Article = () => {
         </p>
       </div>
       <div>
-      <h1 className="title">Białka, tłuszcze, węglowodany, co to jest i czy muszę się na tym znać?</h1>
+      <h2 className="title">Białka, tłuszcze, węglowodany, co to jest i czy muszę się na tym znać?</h2>
         <p className="date">Luty 9, 2025</p>
         <p className="content">
         BTW to potoczny skrót na białka, tłuszcze i węglowodany, czyli makroskładniki, których dostarczamy z pożywieniem.

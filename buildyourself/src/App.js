@@ -20,7 +20,7 @@ import Article6 from './Article6';
         <Router>
             <div className="App">
                 {/* Menu nawigacyjne */}
-                <nav>
+                <nav style={margin}>
                     <ul>
                       <li>
                         <Link to="/">Strona główna</Link>
@@ -53,5 +53,7 @@ import Article6 from './Article6';
         
     );
   }
-  
+const margin= {
+  margin: '40px'
+}
   export default App;

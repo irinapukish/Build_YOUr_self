@@ -4,7 +4,7 @@ const Article5 = () => {
     return (
         <div className="container">
             <div>
-                <h1 className="title">Dlaczego “dieta” 1000 kcal to zły pomysł</h1>
+                <h2 className="title">Dlaczego “dieta” 1000 kcal to zły pomysł</h2>
                 <p className="content">
                     Schemat najczęściej się powtarza: bardzo restrykcyjna dieta cud np. 1000 kcal, kilka miesięcy wyrzeczeń i 
                     głodówki, utrata kilogramów, radość i… efekt jojo, kilogramy wracają z nawiązką. I tak w kółko. Waga skacze, 
@@ -32,7 +32,7 @@ const Article5 = () => {
                     W ten sposób określamy jakie jest nasze zapotrzebowanie kaloryczne: to PPM plus codzienna aktywność. 
                     W ten sposób obliczamy Całkowitą Przemianę Materii CMP 
                 </p>
-                <img src="./images/ppm.jpg"></img>
+                <img src="./images/ppm.jpg" style={imgPPm}></img>
                 <h3 className="title">Co w takim razie dzieje się z organizmem podczas bardzo restrykcyjnej diety?</h3>
                 <p className="content">
                     Pierwsze co powinno zwrócić Twoją uwagę, że “diety cud” w większości przypadków są niższe od PPM większości osób! 
@@ -55,18 +55,18 @@ const Article5 = () => {
                 </p>
                 <h3 className="title">Efekt jojo to nie jedyny problem diet głodówkowych. Jakie są inne wady?</h3>
                 <ul>
-                    <li>
+                    <li className="liStyle">
                         Niedobory witamin i składników odżywczych: początkowo to może być tylko niedobór magnezu, który objawi się 
                         drgającą powieką lub skurczem. Później mogą pojawić się niedobory żelaza i anemia, a z powodu niedoboru witaminy A
                         zaczyna pogarszać się wzrok.
                     </li>
-                    <li>
+                    <li className="liStyle">
                         Pogarsza się stan skóry, pojawiają się pryszcze, cera robi się szara, matowa. Również włosy i paznokcie robią się słabsze.
                     </li>
-                    <li>
+                    <li className="liStyle">
                         Zwalnia metabolizm, dlatego w przyszłości będzie Ci trudniej zrzucić kilogramy.
                     </li>
-                    <li>
+                    <li className="liStyle">
                         Brak energii: Twój organizm nie dostaje wystarczającej ilości energii, aby funkcjonować, brakuje mu na podstawowe potrzeby więc o energii w pracy nie ma już mowy.
                     </li>
                 </ul>
@@ -76,6 +76,10 @@ const Article5 = () => {
             </div>
         </div>
     );
+}
+const imgPPm = {
+    height: '800px',
+    maxWidth: '700px'
 }
 
 export default Article5;

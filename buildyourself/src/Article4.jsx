@@ -4,7 +4,7 @@ const Article4 = () => {
     return (
         <div className="container">
             <div>
-                <h1 className="title">Jaka dieta jest dla mnie najlepsza?</h1>
+                <h2 className="title">Jaka dieta jest dla mnie najlepsza?</h2>
                 <p className="content">
                     Nie sądziłam, że to pytanie usłyszę tak często. Wydawało mi się, że odpowiedź jest prosta: dopasowana do 
                     Twoich potrzeb i możliwości. Okazuje się, że najczęściej niepotrzebnie kombinujemy i próbujemy się dopasować do jakiejś modnej właśnie diety.
@@ -31,8 +31,8 @@ const Article4 = () => {
                     do diety koleżanki. Takie podejście zakłada tylko chwilową zmianę, która będzie kosztować Cię bardzo dużo energii, 
                     a na dłuższą metę nie przyniesie efektów, bo ile można tak wytrzymać?
                 </p>
-                <h1 className="title">Jakie są cechy diety dla Ciebie?</h1>
-                <h2 className="title">1. Zaspokaja Twoje potrzeby</h2>
+                <h2 className="title">Jakie są cechy diety dla Ciebie?</h2>
+                <h3 className="title">1. Zaspokaja Twoje potrzeby</h3>
                 <p className="content">
                     Dokładniej – uwzględnia potrzeby Twojego organizmu: na energię (kalorie), witaminy, składniki odżywcze. 
                     Te potrzeby są różne w zależności od wieku, płci, wykonywanej pracy oraz ilości aktywności fizycznej.
@@ -42,20 +42,20 @@ const Article4 = () => {
                     to prędzej czy później odbije się to na Twoim zdrowiu. Im mniej kalorii oraz więcej produktów, 
                     które wykluczysz z diety, tym większe ryzyko pogorszenia zdrowia.
                 </p>
-                <img src="./images/jaka_dieta_dla_mnie.jpg"></img>
-                <h2 className="title">2. Zapewnia sytość</h2>
+                <img src="./images/jaka_dieta_dla_mnie.jpg" style={imgFormula}></img>
+                <h3 className="title">2. Zapewnia sytość</h3>
                 <p className="content">
                     Najczęstsza obawa przed rozpoczęciem jakiejkolwiek diety, to strach przed głodem. 
                     Wizja liścia sałaty na talerzu skutecznie zniechęca. Zapewniam Cię, że można wprowadzić 
                     zmiany w odżywianiu tak, żeby głodu – tego fizycznego – nie było. Nad emocjonalnym można pracować.
                 </p>
-                <h2 className="title">3. Smakuje Ci</h2>
+                <h3 className="title">3. Smakuje Ci</h3>
                 <p className="content">
                     Dla wielu osób dieta oznacza jedzenie dziwnych i nieznanych rzeczy. 
                     Spokojnie, nie musisz jeść szpinaku, jarmużu lub tofu jeśli nie lubisz.
                     Można zmienić sposób odżywiania i nadal jeść smacznie, to tylko kwestia dopasowania potraw do gustu.
                 </p>
-                <h2 className="title">4. Uwzględnia Twój tryb życia</h2>
+                <h3 className="title">4. Uwzględnia Twój tryb życia</h3>
                 <p className="content">
                     Posiłki co 3 godziny, o konkretnych wyznaczonych godzinach. Potrawy, których nie można zapakować w pudełko i zabrać do pracy,
                     albo długie i skomplikowane przepisy dań. A przecież Ty pracujesz na zmiany i masz tylko jedną przerwę w pracy. 
@@ -64,8 +64,8 @@ const Article4 = () => {
                     Najlepiej zrobić to małymi krokami i wprowadzać zmiany stopniowo. Posiłki szybkie w przygotowaniu, a przy tym smaczne i 
                     zdrowe to nie jest kosmiczny wynalazek, tylko coś zupełnie prawdziwego, co można wprowadzić w życie.
                 </p>
-                <img src="./images/jaka_dieta_dla_mnie_02.jpg"></img>
-                <h2 className="title">5. Zapewni długotrwałe efekty</h2>
+                <img src="./images/jaka_dieta_dla_mnie_02.jpg" style={imgFormula2}></img>
+                <h3 className="title">5. Zapewni długotrwałe efekty</h3>
                 <p className="content">
                     Redukcja wagi to najczęściej główny powód, dla którego rozpoczynamy jakąś dietę. Im szybciej kilogramy spadają, 
                     tym większa radość. Jeśli sięgniesz po pierwszą z brzegu dietę z internetu, to najprawdopodobniej nie uwzględni 
@@ -73,7 +73,7 @@ const Article4 = () => {
                     wagi to bardzo duże ryzyko efektu jojo, czyli tego, że Twoja waga wróci do stanu wyjściowego, a nawet jeszcze się zwiększy. 
                     Dieta dopasowana do Ciebie też pomoże Ci schudnąć, ale stanie się to wolniej. Po to, aby organizm przyzwyczaił się do nowości.
                 </p>
-                <h1 className="title">O czym warto pamiętać?</h1>
+                <h2 className="title">O czym warto pamiętać?</h2>
                 <p className="content">
                     Odpowiedz sobie na pytanie, czy każdego 1 stycznia, przed urlopem i po wakacjach chcesz znowu przechodzić na dietę? 
                     Do wyboru jest zawsze cała paleta modnych diet, pomęczysz się jakiś czas, a później znowu kilogramy wrócą. 
@@ -86,4 +86,11 @@ const Article4 = () => {
     );
 }
 
+const imgFormula = {
+    maxWidth: '600px'
+}
+
+const imgFormula2 = {
+    maxWidth: '700px'
+}
 export default Article4;

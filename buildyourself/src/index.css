@@ -132,7 +132,7 @@ img {
   margin-bottom: 20px;
 }
 
-.faq-item h2 {
+.faq-item h3 {
   background-color: #69B093; /* Zielone tło nagłówków */
   color: white;
   padding: 10px;
@@ -142,7 +142,7 @@ img {
 
 .faq-item p {
   background-color: #F0F0F0; /* Szare tło odpowiedzi */
-  padding: 15px;
+  padding: 7px;
   border-radius: 15px;
   margin-top: 10px;
   display: none; /* Domyślnie ukryte */
@@ -183,19 +183,21 @@ nav ul li a:hover {
 }
 
 .title {
-  font-size: 2em;
-  color: #0053A4;
+  color: #2F6936;
+  text-align: justify;
 }
 
 .date {
   color: gray;
+  font-size: 14px;
   margin: 10px 0;
+  text-align: justify;
 }
 
 .content {
-  font-size: 1.2em;
   color: #333;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .read-more {
@@ -207,3 +209,7 @@ nav ul li a:hover {
 .read-more:hover {
   text-decoration: underline;
 }
+
+.liStyle {
+  text-align: initial;
+};

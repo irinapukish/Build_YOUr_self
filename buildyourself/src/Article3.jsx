@@ -4,7 +4,7 @@ const Article3 = () => {
     return (
         <div className="container">
             <div>
-                <h1 className="title">Jak ograniczyć cukier w diecie? 3 produkty, które szybko zamienisz na zdrowszy odpowiednik</h1>
+                <h2 className="title">Jak ograniczyć cukier w diecie? 3 produkty, które szybko zamienisz na zdrowszy odpowiednik</h2>
                 <p className="content">
                     Nadmiar cukru w diecie to krótka droga do różnych chorób: otyłości, cukrzycy, insulinooporności. 
                     Niestety nie mamy świadomości ile cukru jest w produktach, które na co dzień kupujemy oraz jaka 
@@ -20,22 +20,22 @@ const Article3 = () => {
                     czyli np. przy założeniu, że zjadamy 2000 kcal dziennie to 200 kcal może pochodzić z cukru, 
                     to 10 łyżeczek cukru. Oczywiście dla dzieci i młodzieży ta wartość jest odpowiednio niższa.
                 </p>
-                <h1 className="title">Jak ograniczyć cukier w diecie? Kilka prostych sposobów, które można szybko wprowadzić w życie.</h1>
-                <h2 className="title">1. Napoje gazowane</h2>
+                <h2 className="title">Jak ograniczyć cukier w diecie? Kilka prostych sposobów, które można szybko wprowadzić w życie.</h2>
+                <h3 className="title">1. Napoje gazowane</h3>
                 <p className="content">
                     Według danych WHO 20-40% nastolatków w Polsce codziennie wypija napój gazowany. 
                     W 0,5 l butelce napoju jest średnio 40-45 g cukru, czyli 8-9 łyżeczek cukru.
                     Napoje gazowane najlepiej odstawić całkowicie, można to zrobić stopniowo, zmniejszając 
                     codziennie wypijaną ilość. W to miejsce powinna pojawiać się woda. Może być z dodatkiem owoców lub mięty.
                 </p>
-                <h2 className="title">2. Owocowe jogurty, desery mleczne</h2>
+                <h3 className="title">2. Owocowe jogurty, desery mleczne</h3>
                 <p className="content">
                     Jeden kubeczek jogurtu to przeciętnie 4-5 łyżeczek cukru. Alternatywa jest dość prosta, wystarczy do 
                     jogurtu naturalnego dorzucić dowolny owoc świeży lub mrożony.
                     Dużą pułapką są tutaj produkty dedykowane dzieciom, które wcale nie mają mniej cukru… 
                     Rodzice w dobrej wierze podają takie jogurciki i serki maluchom myśląc, że to dobre źródło wapnia.
                 </p>
-                <h2 className="title">3. Płatki śniadaniowe, gotowe mieszanki musli</h2>
+                <h3 className="title">3. Płatki śniadaniowe, gotowe mieszanki musli</h3>
                 <p className="content">
                     Dla niektórych to podstawa śniadania, bo szybko, bo z dodatkiem witamin (przecież taki napis jest na opakowaniu). 
                     Niestety wszystkie „kolorowe”, smakowe płatki śniadaniowe mają sporo dodanego cukru. Na 100 g płatków to średnio 5-7 łyżeczek cukru.
