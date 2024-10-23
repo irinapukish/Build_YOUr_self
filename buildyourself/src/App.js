@@ -11,6 +11,8 @@ import Article3 from './Article3';
 import Article4 from './Article4';
 import Article5 from './Article5';
 import Article6 from './Article6';
+import Register from './Register';
+import Login from './Login';
 
   function App() {
     const sectionRef = useRef(null);
@@ -31,6 +33,12 @@ import Article6 from './Article6';
                         <li>
                           <Link to="/article">Blog</Link>
                         </li>
+                        <li>
+                          <Link to="/register">Rejestracja</Link>
+                        </li>
+                        <li>
+                          <Link to="/login">Logowanie</Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -45,6 +53,9 @@ import Article6 from './Article6';
                     <Route path="/4" element={<Article4 />} />
                     <Route path="/5" element={<Article5 />} />
                     <Route path="/6" element={<Article6 />} />
+                    <Route path="register" element={<Register/>} />
+                    <Route path="login" element={<Login/>} />
+
                 </Routes>
             </div>
         </Router>
