@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import React, { useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
@@ -36,14 +37,10 @@ import Login from './Login';
                           <Link to="/article">Blog</Link>
                         </li>
                         <li style={colorIcon}>
+                          <Link className="logIcon" to="/login">
                             < FaRegCircleUser/>
-                            {/* <p>Zaloguj</p> */}
-                        </li>
-                        <li>
-                          <Link to="/register">Rejestracja</Link>
-                        </li>
-                        <li>
-                          <Link to="/login">Logowanie</Link>
+                            <p style={margLog}>Zaloguj</p>
+                          </Link>
                         </li>
                     </ul>
               </nav>
@@ -59,8 +56,8 @@ import Login from './Login';
                   <Route path="/4" element={<Article4 />} />
                   <Route path="/5" element={<Article5 />} />
                   <Route path="/6" element={<Article6 />} />
-                  <Route path="register" element={<Register/>} />
-                  <Route path="login" element={<Login/>} />
+                  <Route path="/register" element={<Register/>} />
+                  <Route path="/login" element={<Login/>} />
                 </Routes>
               </div>
             </Router>
@@ -73,5 +70,8 @@ const margin= {
 }
 const colorIcon= {
   color: '#69B093'
+}
+const margLog= {
+  marginLeft: '10px'
 }
 export default App;

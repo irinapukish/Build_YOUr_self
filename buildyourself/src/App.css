@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.logIcon {
+  max-width: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+};
+
