@@ -16,6 +16,7 @@ import Article5 from './Article5';
 import Article6 from './Article6';
 import Register from './Register';
 import Login from './Login';
+import UserInfo from './UserInfo';
 
   function App() {
     const sectionRef = useRef(null);
@@ -29,6 +30,9 @@ import Login from './Login';
                     <ul>
                       <li>
                         <Link to="/">Strona główna</Link>
+                      </li>
+                      <li>
+                        <Link to="/userinfo">Pokój osobisty</Link>
                       </li>
                         <li>
                             <Link to="/faq">Pytania/Odpowiedzi</Link>
@@ -58,6 +62,7 @@ import Login from './Login';
                   <Route path="/6" element={<Article6 />} />
                   <Route path="/register" element={<Register/>} />
                   <Route path="/login" element={<Login/>} />
+                  <Route path="/userinfo" element={<UserInfo/>} />
                 </Routes>
               </div>
             </Router>
