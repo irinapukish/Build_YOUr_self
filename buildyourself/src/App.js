@@ -2,6 +2,8 @@ import './App.css';
 import React, { useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+import { FaRegCircleUser } from "react-icons/fa6";
+
 import FAQ from './FAQ';
 import MainPage from './MainPage';
 import Article from './Article';
@@ -19,10 +21,10 @@ import Login from './Login';
     return (
       <div className="App">
         <div className="navigation-bar">
-        <Router>
+          <Router>
             <div className="App">
-                {/* Menu nawigacyjne */}
-                <nav style={margin}>
+              {/* Menu nawigacyjne */}
+              <nav style={margin}>
                     <ul>
                       <li>
                         <Link to="/">Strona główna</Link>
@@ -33,6 +35,10 @@ import Login from './Login';
                         <li>
                           <Link to="/article">Blog</Link>
                         </li>
+                        <li style={colorIcon}>
+                            < FaRegCircleUser/>
+                            {/* <p>Zaloguj</p> */}
+                        </li>
                         <li>
                           <Link to="/register">Rejestracja</Link>
                         </li>
@@ -40,31 +46,32 @@ import Login from './Login';
                           <Link to="/login">Logowanie</Link>
                         </li>
                     </ul>
-                </nav>
+              </nav>
 
                 {/* Definiujemy ścieżki do stron */}
                 <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/faq" element={<FAQ />} />
-                    <Route path="/article" element={<Article />} />
-                    <Route path="/1" element={<Article1 />} />
-                    <Route path="/2" element={<Article2 />} />
-                    <Route path="/3" element={<Article3 />} />
-                    <Route path="/4" element={<Article4 />} />
-                    <Route path="/5" element={<Article5 />} />
-                    <Route path="/6" element={<Article6 />} />
-                    <Route path="register" element={<Register/>} />
-                    <Route path="login" element={<Login/>} />
-
+                  <Route path="/" element={<MainPage />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/article" element={<Article />} />
+                  <Route path="/1" element={<Article1 />} />
+                  <Route path="/2" element={<Article2 />} />
+                  <Route path="/3" element={<Article3 />} />
+                  <Route path="/4" element={<Article4 />} />
+                  <Route path="/5" element={<Article5 />} />
+                  <Route path="/6" element={<Article6 />} />
+                  <Route path="register" element={<Register/>} />
+                  <Route path="login" element={<Login/>} />
                 </Routes>
-            </div>
-        </Router>
+              </div>
+            </Router>
+          </div>
         </div>
-        </div>
-        
-    );
-  }
+      );
+    }
 const margin= {
   margin: '40px'
 }
-  export default App;
+const colorIcon= {
+  color: '#69B093'
+}
+export default App;
