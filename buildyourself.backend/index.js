@@ -6,16 +6,14 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const secretKey = 'your-secret-key';
 
 // Middleware
 app.use(express.json());
 app.use(cors());
 
 // Połączenie z bazą danych MongoDB
-mongoose.connect('mongodb://localhost:27017/mydatabase', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => console.log('Connected to MongoDB'))
+mongoose.connect('mongodb://localhost:27017/mydatabase').then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log(err));
 
 const UserSchema = new mongoose.Schema({
@@ -52,18 +50,42 @@ app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email });
         if (!user) return res.status(404).json({ message: 'User not found' });
-        console.log(user);
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) return res.status(400).json({ message: 'Invalid credentials' });
 
-        const token = jwt.sign({ id: user._id }, 'your-secret-key', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id }, secretKey, { expiresIn: '1h' });
 
         res.status(200).json({ token, userId: user._id });
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong' });
     }
 });
+
+
+const authMiddleware = (req, res, next) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1];
+        if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+        try {
+            const decoded = jwt.verify(token, secretKey);
+            req.userId = decoded.id;
+            next();
+        } catch (error) {
+            res.status(403).json({ message: 'Invalid token' });
+        }
+    }
+    catch (error) {
+        res.status(403).json({ message: 'Invalid token' });
+    }
+};
+
+// Przykład chronionej trasy
+app.get('/protected-route', authMiddleware, (req, res) => {
+    res.json({ message: 'This is a protected route' });
+});
+
 
 // Start serwera
 app.listen(PORT, () => console.log(`Server running on port ${5000}`));
