@@ -1,120 +1,56 @@
 import React from "react";
+import meals from "./database.js";
+
+
 
 const DayOne = {
   data: "Poniedziałek, 22.11",
   meals: [
-    
-   
     {
-    text:"Posiłek 1: 07:00-10:00",
-      name: "Wrap z łososiem i burratą",
-      imgSrc: "images/foto_przepisy/sniadanie/wrap_z_lososiem_i_burrata.png",
-      kcal: {
-        calories_per_100g: 496,
-        protein_per_100g: 23,
-        fat_per_100g: 30,
-        carbohydrates_per_100g: 33,
-      },
+      text:"Posiłek 1: 07:00-10:00",
+      meal:  meals[0],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Stek wolowy z kaszą",
-        imgSrc: "images/foto_przepisy/obiad/stek_wolowy_z_kasza.png",
-        kcal: {
-          calories_per_100g: 777,
-          protein_per_100g: 56,
-          fat_per_100g: 18,
-          carbohydrates_per_100g: 100,
-        },
-      },
-      {
-        text:"Posiłek 3: 17:00-21:00",
-          name: "Chłodnik truskawkowy",
-          imgSrc: "images/foto_przepisy/kolacja/chlodnik_truskawkowy.png",
-          kcal: {
-            calories_per_100g: 439,
-            protein_per_100g: 26,
-            fat_per_100g: 12,
-            carbohydrates_per_100g: 65,
-          },
-        },
+      meal: meals[1],
+    },
+    {
+      text:"Posiłek 3: 17:00-21:00",
+      meal: meals[2],
+    },
   ],
 };
-
 const DayTwo = {
   data: "Wtorek, 23.11",
   meals: [
     {
       text:"Posiłek 1: 07:00-10:00",
-      name: "Kanapki z serem i jajkiem sadzonym",
-      imgSrc: "images/foto_przepisy/sniadanie/kanapki_z_serem_i_jajkiem_sadzonym.png",
-      kcal: {
-        calories_per_100g: 732,
-        protein_per_100g: 35,
-        fat_per_100g: 37,
-        carbohydrates_per_100g: 72,
-      },
+      meal: meals[3],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Łosoś z marchewką i ziemniakami",
-        imgSrc: "images/foto_przepisy/obiad/losos_z_marchewka_i_ziemniakami.png",
-        kcal: {
-          calories_per_100g: 472,
-          protein_per_100g: 30,
-          fat_per_100g: 23,
-          carbohydrates_per_100g: 41,
-        },
+        meal: meals[4],
       },
       {
         text:"Posiłek 3: 17:00-21:00",
-          name: "Klasyczne pancakes",
-          imgSrc: "images/foto_przepisy/kolacja/klasyczne_pancakes.png",
-          kcal: {
-            calories_per_100g: 192,
-            protein_per_100g: 5,
-            fat_per_100g: 10,
-            carbohydrates_per_100g: 22,
-          },
+          meal: meals[5]
         },
   ],
 };
-
 const DayThree = {
   data: "Środa, 24.11",
   meals: [
     {
       text:"Posiłek 1: 07:00-10:00",
-      name: "Kanapki z focacci z prosciutto i mozzarellą",
-      imgSrc: "images/foto_przepisy/sniadanie/kanapki_z_focacci_z_prosciutto_i_mozzarella.png",
-      kcal: {
-        calories_per_100g: 406,
-        protein_per_100g: 22,
-        fat_per_100g: 16,
-        carbohydrates_per_100g: 42,
-      },
+      meal: meals[6],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Pinsa z szynką i rukolą",
-        imgSrc: "images/foto_przepisy/obiad/pinsa_z_szynka_i_rukola.png",
-        kcal: {
-          calories_per_100g: 262,
-          protein_per_100g: 15,
-          fat_per_100g: 9,
-          carbohydrates_per_100g: 29,
-        },
+        meal: meals[7],
       },
       {
         text:"Posiłek 3: 17:00-21:00",
-          name: "Koktajl bananowy",
-          imgSrc: "images/foto_przepisy/kolacja/koktajl_bananowy.png",
-          kcal: {
-            calories_per_100g: 505,
-            protein_per_100g: 31,
-            fat_per_100g: 18,
-            carbohydrates_per_100g: 60,
-          },
+          meal: meals[8],
         },
   ],
 };
@@ -123,37 +59,16 @@ const DayFour = {
   meals: [
     {
       text:"Posiłek 1: 07:00-10:00",
-      name: "Francuskie paluchy z pesto",
-      imgSrc: "images/foto_przepisy/sniadanie/francuskie_paluchy_z_pesto.png",
-      kcal: {
-        calories_per_100g: 428,
-        protein_per_100g: 7,
-        fat_per_100g: 32,
-        carbohydrates_per_100g: 26,
-      },
+      meal: meals[9],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Makaron z pesto pietruszkowym",
-        imgSrc: "images/foto_przepisy/obiad/makaron_z_pesto_pietruszkowym.png",
-        kcal: {
-          calories_per_100g: 474,
-          protein_per_100g: 42,
-          fat_per_100g: 16,
-          carbohydrates_per_100g: 39,
-        },
+        meal: meals[10],
       },
       {
         text:"Posiłek 3: 17:00-21:00",
-          name: "Koktajl czekoladowy",
-          imgSrc: "images/foto_przepisy/kolacja/koktajl_czekoladowy.png",
-          kcal: {
-            calories_per_100g: 551,
-            protein_per_100g: 26,
-            fat_per_100g: 18,
-            carbohydrates_per_100g: 76,
-          },
-        },
+          meal: meals[11],
+      },
   ],
 };
 const DayFive = {
@@ -161,37 +76,16 @@ const DayFive = {
   meals: [
     {
       text:"Posiłek 1: 07:00-10:00",
-      name: "Tosty a la pizza",
-      imgSrc: "images/foto_przepisy/sniadanie/tosty_a_la_pizza.png",
-      kcal: {
-        calories_per_100g: 566,
-        protein_per_100g: 27,
-        fat_per_100g: 28,
-        carbohydrates_per_100g: 56,
-      },
+      meal: meals[12],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Makaron z sosem bolońskim z tofu",
-        imgSrc: "images/foto_przepisy/obiad/makaron_z_sosem_bolonskim_z_tofu.png",
-        kcal: {
-          calories_per_100g: 248,
-          protein_per_100g: 13,
-          fat_per_100g: 11,
-          carbohydrates_per_100g: 24,
-        },
+       meal: meals[13],
       },
       {
         text:"Posiłek 3: 17:00-21:00",
-          name: "Owsianka z Inką",
-          imgSrc: "images/foto_przepisy/kolacja/owsianka_z_inka.png",
-          kcal: {
-            calories_per_100g: 171,
-            protein_per_100g: 10,
-            fat_per_100g: 6,
-            carbohydrates_per_100g: 22,
-          },
-        },
+          meal: meals[14],
+    },
   ],
 };
 const DaySix = {
@@ -199,36 +93,15 @@ const DaySix = {
   meals: [
     {
       text:"Posiłek 1: 07:00-10:00",
-      name: "Jajecznica na parze",
-      imgSrc: "/images/foto_przepisy/sniadanie/jajecznica _na_parze.png",
-      kcal: {
-        calories_per_100g: 472,
-        protein_per_100g: 30,
-        fat_per_100g: 23,
-        carbohydrates_per_100g: 38,
-      },
+      meal: meals[15],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Pinsa z szynką z kurczaka i suszonymi pomidorami",
-        imgSrc: "images/foto_przepisy/obiad/pinsa_z_szynka_z_kurczaka_i_suszonymi_pomidorami.png",
-        kcal: {
-          calories_per_100g: 298,
-          protein_per_100g: 17,
-          fat_per_100g: 11,
-          carbohydrates_per_100g: 32,
-        },
+        meal: meals[16],
       },
       {
         text:"Posiłek 3: 17:00-21:00",
-          name: "Ryżowe placuszki z owocami",
-          imgSrc: "images/foto_przepisy/kolacja/ryzowe_placuszki_z_owocami.png",
-          kcal: {
-            calories_per_100g: 261,
-            protein_per_100g: 8,
-            fat_per_100g: 5,
-            carbohydrates_per_100g: 48,
-          },
+          meal: meals[17],
         },
   ],
 };
@@ -237,37 +110,16 @@ const DaySeven = {
   meals: [
     {
       text:"Posiłek 1: 07:00-10:00",
-      name: "Kanapki z jajkiem na twardo i warzywami",
-      imgSrc: "/images/foto_przepisy/sniadanie/kanapki_z_jajkiem_na_twardo_i_warzywami.png",
-      kcal: {
-        calories_per_100g: 542,
-        protein_per_100g: 26,
-        fat_per_100g: 24,
-        carbohydrates_per_100g: 58,
-      },
+      meal: meals[18],
     },
     {
       text:"Posiłek 2: 12:00-15:00",
-        name: "Dorsz gotowany na parze z kuskusem",
-        imgSrc: "images/foto_przepisy/obiad/dorsz_gotowany_na_parze_z_kuskusem.png",
-        kcal: {
-          calories_per_100g: 212,
-          protein_per_100g: 13,
-          fat_per_100g: 7,
-          carbohydrates_per_100g: 24,
-        },
-      },
-      {
-        text:"Posiłek 3: 17:00-21:00",
-          name: "Sałatka z serem brie, winogronami, orzechami i grzankami",
-          imgSrc: "images/foto_przepisy/kolacja/salatka_z_serem_brie_winogronami_orzechami_i_grzankami.png",
-          kcal: {
-            calories_per_100g: 247,
-            protein_per_100g: 9,
-            fat_per_100g: 14,
-            carbohydrates_per_100g: 22,
-          },
-        },
+      meal: meals[19],
+    },
+    {
+      text:"Posiłek 3: 17:00-21:00",
+      meal: meals[20],
+    },
   ],
 };
 const testWeek = [DayOne, DayTwo, DayThree, DayFour, DayFive, DaySix, DaySeven];
@@ -282,28 +134,28 @@ const WeeklyMenuPlan = () => {
 
             {d.meals.map((m) => (
               <div style={styles.container_plan}>
-                <img style={styles.imgstyle} src={m.imgSrc} />
+                <img style={styles.imgstyle} src={m.meal.imgSrc} />
                 <div>
 
                 <div >{m.text}</div>
-                <div className="meal">{m.name}</div>
+                <div className="meal">{m.meal.name}</div>
                 </div>
               </div>
             ))}
 
-            <div style={styles.boxstyle} className="kcal">
-              {d.meals.reduce((total, meal) => total + meal.kcal.calories_per_100g, 0)}
-              Kcal.{" "}
+              <div style={styles.boxstyle} className="kcal">
+                {d.meals.reduce((total, meal) => total + meal.meal.kcal.calories_per_100g, 0)}
+                Kcal.{" "}
 
-              B:{" "}
-              {d.meals.reduce((total, meal) => total + meal.kcal.protein_per_100g, 0)}
+                B:{" "}
+                {d.meals.reduce((total, meal) => total + meal.meal.kcal.protein_per_100g, 0)}
 
-              T:{" "}
-              {d.meals.reduce((total, meal) => total + meal.kcal.fat_per_100g, 0)}
+                T:{" "}
+                {d.meals.reduce((total, meal) => total + meal.meal.kcal.fat_per_100g, 0)}
 
-              W:{" "}
-              {d.meals.reduce((total, meal) => total + meal.kcal.carbohydrates_per_100g, 0)}
-            </div>
+                W:{" "}
+                {d.meals.reduce((total, meal) => total + meal.meal.kcal.carbohydrates_per_100g, 0)}
+              </div> 
         </div>
       ))}
     </div>
