@@ -1,7 +1,6 @@
 import React from "react";
 import meals from "./database.js";
-
-
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const DayOne = {
   data: "Poniedziałek, 22.11",
@@ -133,14 +132,14 @@ const WeeklyMenuPlan = () => {
             <div style={styles.boxstyle} className="day-week">{d.data}</div>
 
             {d.meals.map((m) => (
-              <div style={styles.container_plan}>
+              <Link to="/mealdetailview" style={styles.container_plan}>
                 <img style={styles.imgstyle} src={m.meal.imgSrc} />
                 <div>
 
                 <div >{m.text}</div>
                 <div className="meal">{m.meal.name}</div>
                 </div>
-              </div>
+              </Link>
             ))}
 
               <div style={styles.boxstyle} className="kcal">

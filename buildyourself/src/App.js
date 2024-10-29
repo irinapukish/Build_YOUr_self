@@ -18,6 +18,7 @@ import Register from './Register';
 import Login from './Login';
 import UserInfo from './UserInfo';
 import WeeklyMenuPlan from './WeeklyMenuPlan';
+import MealDetailView from './MealDetailView';
 
   function App() {
     const sectionRef = useRef(null);
@@ -68,6 +69,7 @@ import WeeklyMenuPlan from './WeeklyMenuPlan';
                   <Route path="/login" element={<Login/>} />
                   <Route path="/userinfo" element={<UserInfo/>} />
                   <Route path="/weeklymenuplan" element={<WeeklyMenuPlan/>} />
+                  <Route path="/mealdetailview" element={<MealDetailView/>} />
                 </Routes>
               </div>
             </Router>
