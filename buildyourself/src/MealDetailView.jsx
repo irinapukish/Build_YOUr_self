@@ -1,31 +1,13 @@
 import React from "react";
+import { useParams } from 'react-router-dom';
+import meals from "./database.js";
 
 const MealDetailView = () => {
-  const recipeData = {
-    name: "Wrap z łososiem i burratą",
-    imgSrc: "images/foto_przepisy/sniadanie/wrap_z_lososiem_i_burrata.png",
-    preparationTime: 5,
-    totalTime: 5,
-    ingridients: [
-      { name: "sztuka tortilli", count: 1, mass: 60 },
-      { name: "łyżka serka śmietanowego", count: 1, mass: 25 },
-      { name: "rukola", count: 0, mass: 10 },
-      { name: "łosoś wędzony", count: 0, mass: 50 },
-      { name: "sztuki ogórka", count: 0.5, mass: 75 },
-      { name: "opakowania burraty", count: 0.5, mass: 60 },
-    ],
-    preparation_method: [
-      "Tortillę smarujemy serkiem, nakładamy rukolę.",
-      "Na tortillę nakładamy porwanego na kawałki łososia, pokrojonego ogórka i kawałki burraty, zawijamy.",
-    ],
-    kcal: {
-      calories_per_100g: 496,
-      protein_per_100g: 23,
-      fat_per_100g: 30,
-      carbohydrates_per_100g: 33,
-    },
-  };
-  return (
+    const { mealId } = useParams();
+    // Get meal from database
+    const recipeData = meals.find(item => item.id === parseInt(mealId));
+
+    return (
     <div style={styles.container}>
       <div style={styles.header}>
         <img src={recipeData.imgSrc} alt={recipeData.name} style={styles.image} />

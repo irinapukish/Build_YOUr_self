@@ -2,7 +2,7 @@
     {
         id: 1,
         name: "Wrap z łososiem i burratą",
-        imgSrc: "images/foto_przepisy/sniadanie/wrap_z_lososiem_i_burrata.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/wrap_z_lososiem_i_burrata.png",
         ingridients: [ 
             {
                 name:"sztuka tortilli",
@@ -49,7 +49,7 @@
     {
         id: 2,
         name: "Stek wołowy z kaszą",
-        imgSrc: "images/foto_przepisy/obiad/stek_wolowy_z_kasza.png",
+        imgSrc: "/images/foto_przepisy/obiad/stek_wolowy_z_kasza.png",
         ingridients: [ 
             {
                 name:"kaszy pęczak",
@@ -125,7 +125,7 @@
     {
         id: 3,
         name:"Chłodnik truskawkowy",
-        imgSrc: "images/foto_przepisy/kolacja/chlodnik_truskawkowy.png",
+        imgSrc: "/images/foto_przepisy/kolacja/chlodnik_truskawkowy.png",
         ingridients: [ 
             {
                 name:"truskawki",
@@ -184,7 +184,7 @@
     {
         id: 4,
         name:"Kanapki z serem i jajkiem sadzonym",
-        imgSrc: "images/foto_przepisy/sniadanie/kanapki_z_serem_i_jajkiem_sadzonym.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/kanapki_z_serem_i_jajkiem_sadzonym.png",
         ingridients: [ 
             {
                 name:"kromki chleba żytniego razowego",
@@ -243,7 +243,7 @@
     {
         id: 5,
         name:"Łosoś z marchewką i ziemniakami",
-        imgSrc: "images/foto_przepisy/obiad/losos_z_marchewka_i_ziemniakami.png",
+        imgSrc: "/images/foto_przepisy/obiad/losos_z_marchewka_i_ziemniakami.png",
         ingridients: [ 
             {
                 name:"losoś",
@@ -297,7 +297,7 @@
     {
         id: 6,
         name:"Klasyczne pancakes",
-        imgSrc: "images/foto_przepisy/kolacja/klasyczne_pancakes.png",
+        imgSrc: "/images/foto_przepisy/kolacja/klasyczne_pancakes.png",
         ingridients: [ 
             {
                 name:"szklanki maślanki",
@@ -347,7 +347,7 @@
     {
         id: 7,
         name:"Kanapki z focacci z prosciutto i mozzarellą",
-        imgSrc: "images/foto_przepisy/sniadanie/kanapki_z_focacci_z_prosciutto_i_mozzarella.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/kanapki_z_focacci_z_prosciutto_i_mozzarella.png",
         ingridients: [ 
             {
                 name:"focaccia",
@@ -389,7 +389,7 @@
     {
         id: 8,
         name:"Pinsa z szynką i rukolą",
-        imgSrc: "images/foto_przepisy/obiad/pinsa_z_szynka_i_rukola.png",
+        imgSrc: "/images/foto_przepisy/obiad/pinsa_z_szynka_i_rukola.png",
         ingridients: [ 
             {
                 name:"sztuki pinsy",
@@ -442,7 +442,7 @@
     {
         id: 9,
         name:"Koktajl bananowy",
-        imgSrc: "images/foto_przepisy/kolacja/koktajl_bananowy.png",
+        imgSrc: "/images/foto_przepisy/kolacja/koktajl_bananowy.png",
         ingridients: [ 
             {
                 name:"sztuka bananów",
@@ -483,7 +483,7 @@
     {
         id: 10,
         name:"Francuskie paluchy z pesto",
-        imgSrc: "images/foto_przepisy/sniadanie/francuskie_paluchy_z_pesto.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/francuskie_paluchy_z_pesto.png",
         ingridients: [ 
             {
                 name:"1 opakowanie ciasta francuskiego",
@@ -516,7 +516,7 @@
     {
         id: 11,
         name:"Makaron z pesto pietruszkowym",
-        imgSrc: "images/foto_przepisy/obiad/makaron_z_pesto_pietruszkowym.png",
+        imgSrc: "/images/foto_przepisy/obiad/makaron_z_pesto_pietruszkowym.png",
         ingridients: [ 
             {
                 name:"mięsa z piersi kurczaka",
@@ -560,7 +560,7 @@
     {
         id: 12,
         name:"Koktajl czekoladowy",
-        imgSrc: "images/foto_przepisy/kolacja/koktajl_czekoladowy.png",
+        imgSrc: "/images/foto_przepisy/kolacja/koktajl_czekoladowy.png",
         ingridients: [ 
             {
                 name:"sztuka bananów",
@@ -606,7 +606,7 @@
     {
         id: 13,
         name:"Tosty a la pizza",
-        imgSrc: "images/foto_przepisy/sniadanie/tosty_a_la_pizza.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/tosty_a_la_pizza.png",
         ingridients: [ 
             {
                 name:"kromki chleba żytniego",
@@ -650,7 +650,7 @@
     {
         id: 14,
         name:"Makaron z sosem bolońskim z tofu",
-        imgSrc: "images/foto_przepisy/obiad/makaron_z_sosem_bolonskim_z_tofu.png",
+        imgSrc: "/images/foto_przepisy/obiad/makaron_z_sosem_bolonskim_z_tofu.png",
         ingridients: [ 
             {
                 name:"makaronu spaghetti",
@@ -706,7 +706,7 @@
     {
         id: 15,
         name:"Owsianka z Inką",
-        imgSrc: "images/foto_przepisy/kolacja/owsianka_z_inka.png",
+        imgSrc: "/images/foto_przepisy/kolacja/owsianka_z_inka.png",
         ingridients: [ 
             {
                 name:"łyżki płatków owsianych",
@@ -764,7 +764,7 @@
     {
         id: 16,
         name:"Jajecznica na parze",
-        imgSrc: "images/foto_przepisy/sniadanie/jajecznica _na_parze.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/jajecznica _na_parze.png",
         ingridients: [ 
             {
                 name:"sztuki jaja kurzego",
@@ -808,7 +808,7 @@
     {
         id: 17,
         name:"Pinsa z szynką z kurczaka i suszonymi pomidorami",
-        imgSrc: "images/foto_przepisy/obiad/pinsa_z_szynka_z_kurczaka_i_suszonymi_pomidorami.png",
+        imgSrc: "/images/foto_przepisy/obiad/pinsa_z_szynka_z_kurczaka_i_suszonymi_pomidorami.png",
         ingridients: [ 
             {
                 name:"sztuki pinsy",
@@ -871,7 +871,7 @@
     {
         id: 18,
         name:"Ryżowe placuszki z owocami",
-        imgSrc: "images/foto_przepisy/kolacja/ryzowe_placuszki_z_owocami.png",
+        imgSrc: "/images/foto_przepisy/kolacja/ryzowe_placuszki_z_owocami.png",
         ingridients: [ 
             {
                 name:"łyżek mąki ryżowej",
@@ -924,7 +924,7 @@
     {
         id: 19,
         name:"Kanapki z jajkiem na twardo i warzywami",
-        imgSrc: "images/foto_przepisy/sniadanie/kanapki_z_jajkiem_na_twardo_i_warzywami.png",
+        imgSrc: "/images/foto_przepisy/sniadanie/kanapki_z_jajkiem_na_twardo_i_warzywami.png",
         ingridients: [ 
             {
                 name:"kromki chleba pszennego",
@@ -967,7 +967,7 @@
     {
         id: 20,
         name:"Dorsz gotowany na parze z kuskusem",
-        imgSrc: "images/foto_przepisy/obiad/dorsz_gotowany_na_parze_z_kuskusem.png",
+        imgSrc: "/images/foto_przepisy/obiad/dorsz_gotowany_na_parze_z_kuskusem.png",
         ingridients: [ 
             {
                 name:"dorsz",
@@ -1016,7 +1016,7 @@
     {
         id: 21,
         name:"Sałatka z serem brie, winogronami, orzechami i grzankami",
-        imgSrc: "images/foto_przepisy/kolacja/salatka_z_serem_brie_winogronami_orzechami_i_grzankami.png",
+        imgSrc: "/images/foto_przepisy/kolacja/salatka_z_serem_brie_winogronami_orzechami_i_grzankami.png",
         ingridients: [ 
             {
                 name:"miksu sałat",

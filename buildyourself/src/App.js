@@ -69,7 +69,7 @@ import MealDetailView from './MealDetailView';
                   <Route path="/login" element={<Login/>} />
                   <Route path="/userinfo" element={<UserInfo/>} />
                   <Route path="/weeklymenuplan" element={<WeeklyMenuPlan/>} />
-                  <Route path="/mealdetailview" element={<MealDetailView/>} />
+                  <Route path="/mealdetailview/:mealId" element={<MealDetailView/>} />
                 </Routes>
               </div>
             </Router>

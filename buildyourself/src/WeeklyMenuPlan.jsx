@@ -132,7 +132,7 @@ const WeeklyMenuPlan = () => {
             <div style={styles.boxstyle} className="day-week">{d.data}</div>
 
             {d.meals.map((m) => (
-              <Link to="/mealdetailview" style={styles.container_plan}>
+              <Link  to={`/mealdetailview/${m.meal.id}`} style={styles.container_plan}>
                 <img style={styles.imgstyle} src={m.meal.imgSrc} />
                 <div>
 
