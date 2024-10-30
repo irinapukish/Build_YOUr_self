@@ -142,18 +142,23 @@ const WeeklyMenuPlan = () => {
               </Link>
             ))}
 
-              <div style={styles.boxstyle} className="kcal">
-                {d.meals.reduce((total, meal) => total + meal.meal.kcal.calories_per_100g, 0)}
-                Kcal.{" "}
-
-                B:{" "}
-                {d.meals.reduce((total, meal) => total + meal.meal.kcal.protein_per_100g, 0)}
-
-                T:{" "}
-                {d.meals.reduce((total, meal) => total + meal.meal.kcal.fat_per_100g, 0)}
-
-                W:{" "}
-                {d.meals.reduce((total, meal) => total + meal.meal.kcal.carbohydrates_per_100g, 0)}
+              <div style={styles.boxstyle}>
+                <div style={{display:'flex', flex:'none'}}>
+                  {d.meals.reduce((total, meal) => total + meal.meal.kcal.calories_per_100g, 0)}
+                  Kcal{" "}
+                </div>
+                <div style={{display:'flex', flex:'none'}}>
+                  B:{" "}
+                  {d.meals.reduce((total, meal) => total + meal.meal.kcal.protein_per_100g, 0)} g
+                </div>
+                <div style={{display:'flex', flex:'none'}}>
+                  T:{" "}
+                  {d.meals.reduce((total, meal) => total + meal.meal.kcal.fat_per_100g, 0)} g
+                </div>
+                <div style={{display:'flex', flex:'none'}}>
+                  W:{" "}
+                  {d.meals.reduce((total, meal) => total + meal.meal.kcal.carbohydrates_per_100g, 0)} g
+                </div>
               </div> 
         </div>
       ))}
@@ -175,12 +180,15 @@ imgstyle:{
     boxShadow: 'none'
 },
 boxstyle:{
-    padding: '10px',
         border: '1px solid #e0e0e0',
         borderRadius: '10px',
         backgroundColor: '#f9f9f9',
         fontFamily: 'Arial, sans-serif',
         fontSize: '16px',
+        padding: '10px 20px',
+        display: 'flex',
+        flexDirection: 'row',
+        gap: '10px',
 },
 container_plan:{
     display:"flex",
@@ -191,6 +199,8 @@ container_plan:{
      borderRadius: '10px',
      backgroundColor: '#f9f9f9',
      fontFamily: 'Arial, sans-serif',
+     textDecoration: 'none',
+     color: 'black',
 }
 }
 export default WeeklyMenuPlan;
