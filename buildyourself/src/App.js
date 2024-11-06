@@ -19,6 +19,7 @@ import Login from './Login';
 import UserInfo from './UserInfo';
 import WeeklyMenuPlan from './WeeklyMenuPlan';
 import MealDetailView from './MealDetailView';
+import { BsJustify } from 'react-icons/bs';
 
   function App() {
     const sectionRef = useRef(null);
@@ -29,6 +30,7 @@ import MealDetailView from './MealDetailView';
             <div className="App">
               {/* Menu nawigacyjne */}
               <nav style={margin}>
+              <img style={{width:250, boxShadow: 'none'}} src='./images/logo.jpg'></img>
                     <ul>
                       <li>
                         <Link to="/">Strona główna</Link>
@@ -78,7 +80,10 @@ import MealDetailView from './MealDetailView';
       );
     }
 const margin= {
-  margin: '40px'
+  margin: '40px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 }
 const colorIcon= {
   color: '#69B093'
