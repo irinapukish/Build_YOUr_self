@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import backgroundSVG from './mask-logo.svg';
 import BmiCalculator from './BmiCalculator';
-import ScrollButton from './MyButton';
 
 const MainPage = () => {
   const sectionRef = useRef(null);
