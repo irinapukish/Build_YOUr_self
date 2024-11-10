@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const { loginUser } = useAuth();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -14,10 +18,15 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', formData);
-            console.log(response.data); // tu możesz zapisać token w localStorage
-            localStorage.setItem('token', response.data.token);
+            const response = await axios.post('http://localhost:5001/login', formData);
+            console.log(response.data);
+            loginUser(response.data);
 
+            if (response.data.role === 'admin') {
+                navigate('/admin');
+            } else if (response.data.role === 'user') {
+                navigate('/userinfo');
+            }
         } catch (error) {
             console.error('There was an error!', error);
         }
@@ -50,6 +59,8 @@ const Login = () => {
                     Zaloguj się
                 </button>
             </form>
+            <p>admin@admin.com</p>
+            <p>user@user.com</p>
             <p style={styles.registerText}>
                 Nie masz konta? <a href="/register" style={styles.registerLink}>Zarejestruj się</a>
             </p>

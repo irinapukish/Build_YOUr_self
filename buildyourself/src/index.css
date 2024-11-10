@@ -131,7 +131,7 @@ img {
   cursor: pointer;
 }
 
-.faq-item p {
+.faq-item .faq-item-content {
   background-color: #F0F0F0; /* Szare tło odpowiedzi */
   padding: 7px;
   border-radius: 15px;
@@ -139,7 +139,7 @@ img {
   display: none; /* Domyślnie ukryte */
 }
 
-.faq-item.active p {
+.faq-item.active .faq-item-content {
   display: block; /* Odsłonięte po kliknięciu */
 }
 

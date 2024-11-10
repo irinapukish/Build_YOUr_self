@@ -167,7 +167,6 @@ const WeeklyMenuPlan = () => {
 };
 
 const styles = {
-
   oneday:{
     display: 'flex',
     flexDirection: 'column',
@@ -175,32 +174,33 @@ const styles = {
     minWidth: '300px',
     marginRight: '8px'
   },
-imgstyle:{
+  imgstyle:{
     maxWidth: '100px',
     boxShadow: 'none'
-},
-boxstyle:{
-        border: '1px solid #e0e0e0',
-        borderRadius: '10px',
-        backgroundColor: '#f9f9f9',
-        fontFamily: 'Arial, sans-serif',
-        fontSize: '16px',
-        padding: '10px 20px',
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '10px',
-},
-container_plan:{
+  },
+  boxstyle:{
+    border: '1px solid #e0e0e0',
+    borderRadius: '10px',
+    backgroundColor: '#f9f9f9',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    padding: '10px 20px',
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '10px',
+  },
+  container_plan:{
     display:"flex",
     flexDirection:'row',
-     alignItems:'center',
-     padding: '0 10px',
-     border: '1px solid #e0e0e0',
-     borderRadius: '10px',
-     backgroundColor: '#f9f9f9',
-     fontFamily: 'Arial, sans-serif',
-     textDecoration: 'none',
-     color: 'black',
+    alignItems:'center',
+    padding: '0 10px',
+    border: '1px solid #e0e0e0',
+    borderRadius: '10px',
+    backgroundColor: '#f9f9f9',
+    fontFamily: 'Arial, sans-serif',
+    textDecoration: 'none',
+    color: 'black',
+  }
 }
-}
+
 export default WeeklyMenuPlan;

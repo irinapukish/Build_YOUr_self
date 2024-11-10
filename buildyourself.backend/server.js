@@ -1,0 +1,132 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 5001;
+const secretKey = 'your-secret-key';
+
+// Middleware
+app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
+
+// Połączenie z bazą danych MongoDB
+mongoose.connect('mongodb://localhost:27017/mydatabase').then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.log(err));
+
+const UserSchema = new mongoose.Schema({
+    username: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    role: { type: String, default: 'user' }
+});
+
+const User = mongoose.model('User', UserSchema);
+
+// Rejestracja użytkownika
+app.post('/register', async (req, res) => {
+    const { username, email, password } = req.body;
+
+    try {
+        const existingUser = await User.findOne({ email });
+        if (existingUser) return res.status(400).json({ message: 'User already exists' });
+
+        const hashedPassword = await bcrypt.hash(password, 12);
+
+        // Check if this is the first user and assign "admin" role if true
+        const isFirstUser = (await User.countDocuments({})) === 0;
+        const role = isFirstUser ? 'admin' : 'user';
+
+        const newUser = new User({ username, email, password: hashedPassword, role });
+        await newUser.save();
+
+        res.status(201).json({ message: 'User registered successfully', role });
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' });
+    }
+});
+
+// Logowanie użytkownika
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+        if (!user) return res.status(404).json({ message: 'User not found' });
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) return res.status(400).json({ message: 'Invalid credentials' });
+
+        const token = jwt.sign({ id: user._id, role: user.role }, secretKey, { expiresIn: '1h' });
+
+        // Return role along with token
+        res.status(200).json({ token, userId: user._id, role: user.role });
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' });
+    }
+});
+
+
+const authMiddleware = (req, res, next) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1];
+        if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+        try {
+            const decoded = jwt.verify(token, secretKey);
+            req.userId = decoded.id;
+            req.userRole = decoded.role;
+            next();
+        } catch (error) {
+            res.status(403).json({ message: 'Invalid token' });
+        }
+    }
+    catch (error) {
+        res.status(403).json({ message: 'Invalid token' });
+    }
+};
+
+const adminMiddleware = (req, res, next) => {
+    if (req.userRole !== 'admin') {
+        return res.status(403).json({ message: 'Access denied. Admins only.' });
+    }
+    next();
+};
+
+// Przykład chronionej trasy
+app.get('/protected-route', authMiddleware, (req, res) => {
+    res.json({ message: 'This is a protected route' });
+});
+
+app.get('/admin/users', authMiddleware, adminMiddleware, async (req, res) => {
+    try {
+        const users = await User.find({}, 'username email role');
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({ message: 'Could not retrieve users' });
+    }
+});
+
+app.delete('/admin/users/:id', authMiddleware, adminMiddleware, async (req, res) => {
+    try {
+        const userId = req.params.id;
+        
+        // Prevent admins from deleting their own account for security
+        if (req.userId === userId) {
+            return res.status(400).json({ message: 'Admins cannot delete their own account' });
+        }
+
+        await User.findByIdAndDelete(userId);
+        res.status(200).json({ message: 'User removed successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error removing user' });
+    }
+});
+
+// Start serwera
+app.listen(PORT, () => console.log(`Server running on port ${5001}`));
