@@ -8,6 +8,8 @@ const Register = () => {
         password: '',
     });
 
+    const [isRegistered, setIsRegistered] = useState(false);
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -17,13 +19,17 @@ const Register = () => {
         try {
             const response = await axios.post('http://localhost:5001/register', formData);
             console.log(response.data);
+            setIsRegistered(true);
         } catch (error) {
             console.error('There was an error!', error);
-        }
+            alert("Ten e-mail już zajęty");
+        }  
     };
 
     return (
-        <div style={styles.container}>
+        <>
+        {!isRegistered && (
+          <div style={styles.container}>
             <h2 style={styles.title}>Rejestracja</h2>
             <form style={styles.field} onSubmit={handleSubmit}>
                 <input
@@ -56,6 +62,16 @@ const Register = () => {
                 <button type="submit" style={styles.button}>Zarejestruj się</button>
             </form>
         </div>
+        )}
+        {isRegistered && (
+            <div style={styles.container}>
+            <h2 style={styles.title}>Rejestracja udana</h2>
+            <p style={styles.registerText}>
+                Przejdż do logowania <a href="/login" style={styles.loginLink}> Zaloguj się</a>
+            </p>
+        </div>
+        )}
+    </>
     );
 };
 

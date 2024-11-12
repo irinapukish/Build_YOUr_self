@@ -29,6 +29,7 @@ const Login = () => {
             }
         } catch (error) {
             console.error('There was an error!', error);
+            alert("E-mail lub hasło jest niepoprawny")
         }
     };
 
