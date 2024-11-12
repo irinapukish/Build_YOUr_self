@@ -27,9 +27,11 @@ import { useAuth } from './AuthContext';
                 <Link to="/userinfo">Pokój osobisty</Link>
               </li>
             ) : null}
+            {user?.role === 'user' ? (
           <li>
             <Link to="/weeklymenuplan">Plan</Link>
           </li>
+            ) : null}
           <li>
               <Link to="/faq">Pytania/Odpowiedzi</Link>
           </li>
@@ -56,6 +58,7 @@ import { useAuth } from './AuthContext';
     }
 
 const margin= {
+  backgroundColor: "white",
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
