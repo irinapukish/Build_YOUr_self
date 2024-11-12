@@ -56,7 +56,6 @@ import { useAuth } from './AuthContext';
     }
 
 const margin= {
-  margin: '40px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
