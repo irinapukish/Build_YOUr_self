@@ -8,6 +8,8 @@ const MealDetailView = () => {
     const recipeData = meals.find(item => item.id === parseInt(mealId));
 
     return (
+      <>
+    <button className="buttonBack" onClick={() => window.location.href = '/weeklymenuplan'}>Wróć</button>
     <div style={styles.container}>
       <div style={styles.header}>
         <img src={recipeData.imgSrc} alt={recipeData.name} style={styles.image} />
@@ -69,6 +71,7 @@ const MealDetailView = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

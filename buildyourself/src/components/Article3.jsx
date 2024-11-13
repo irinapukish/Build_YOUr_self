@@ -2,6 +2,8 @@ import React from 'react';
 
 const Article3 = () => {
     return (
+        <>
+        <button className="buttonBack" onClick={() => window.location.href = '/article'}>Wróć</button>
         <div className="container">
             <div>
                 <h2 className="title">Jak ograniczyć cukier w diecie? 3 produkty, które szybko zamienisz na zdrowszy odpowiednik</h2>
@@ -48,6 +50,7 @@ const Article3 = () => {
                 </p>
             </div>
         </div>
+        </>
     );
 }
 

@@ -2,6 +2,8 @@ import React from 'react';
 
 const Article4 = () => {
     return (
+        <>
+        <button className="buttonBack" onClick={() => window.location.href = '/article'}>Wróć</button>
         <div className="container">
             <div>
                 <h2 className="title">Jaka dieta jest dla mnie najlepsza?</h2>
@@ -83,6 +85,7 @@ const Article4 = () => {
                 </p>
             </div>
         </div>
+        </>
     );
 }
 

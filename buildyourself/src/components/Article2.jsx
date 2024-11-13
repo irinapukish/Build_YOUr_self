@@ -2,9 +2,11 @@ import React from 'react';
 
 const Article2 = () => {
     return (
+        <>
+        <button className="buttonBack" onClick={() => window.location.href = '/article'}>Wróć</button>
         <div className="container">
             <div>
-                <h3 className="title">Jak nie podjadać siedząc w domu?</h3>
+                <h2 className="title">Jak nie podjadać siedząc w domu?</h2>
                 <p className="content">
                     Do tej pory w dni robocze najczęściej mieliśmy jakiś rytm dnia, w który należało wkomponować posiłki. 
                     To w weekend trudniej było zachować regularność jedzenia. #zostańwdomu to dla wielu niekończący się 
@@ -91,6 +93,7 @@ const Article2 = () => {
                 </ul>
             </div>
         </div>
+        </>
     );
 }
 

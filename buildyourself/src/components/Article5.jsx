@@ -2,6 +2,8 @@ import React from 'react';
 
 const Article5 = () => {
     return (
+        <>
+        <button className="buttonBack" onClick={() => window.location.href = '/article'}>Wróć</button>
         <div className="container">
             <div>
                 <h2 className="title">Dlaczego “dieta” 1000 kcal to zły pomysł</h2>
@@ -75,6 +77,7 @@ const Article5 = () => {
                 </p>
             </div>
         </div>
+        </>
     );
 }
 const imgPPm = {

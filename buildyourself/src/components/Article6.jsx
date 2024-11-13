@@ -2,6 +2,8 @@ import React from 'react';
 
 const Article6 = () => {
     return (
+        <>
+        <button className="buttonBack" onClick={() => window.location.href = '/article'}>Wróć</button>
         <div className="container">
             <div>
                 <h2 className="title">Białka, tłuszcze, węglowodany, co to jest i czy muszę się na tym znać?</h2>
@@ -109,6 +111,7 @@ const Article6 = () => {
                 </p>
             </div>
         </div>
+        </>
     );
 }
 const imgg = {

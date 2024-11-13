@@ -2,6 +2,8 @@ import React from 'react';
 
 const Article1 = () => {
     return (
+        <>
+        <button className="buttonBack" onClick={() => window.location.href = '/article'}>Wróć</button>
         <div className="container">
             <div>
                 <h2 className="title">Dlaczego regularne jedzenie jest ważne?</h2>
@@ -45,6 +47,7 @@ const Article1 = () => {
                 </p>
             </div>
         </div>
+        </>
   );
 }
 const imgZeg = {
