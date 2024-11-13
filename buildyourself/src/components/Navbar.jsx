@@ -15,10 +15,10 @@ import { useAuth } from '../helpers/AuthContext';
           </li>
           {user?.role === 'admin' ? (
             <li>
-                <Link to="/admin">admin</Link>
+                <Link to="/admin">Lista użytkowników</Link>
               </li>
             ) : null}
-            {user?.role === 'user' ||  user?.role === 'admin' ? (
+            {user?.role === 'user'? (
             <li>
                 <Link to="/userinfo">Pokój osobisty</Link>
               </li>
