@@ -1,5 +1,5 @@
 import React from "react";
-import meals from "./database.js";
+import meals from "../helpers/database.js";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const DayOne = {
@@ -125,7 +125,8 @@ const testWeek = [DayOne, DayTwo, DayThree, DayFour, DayFive, DaySix, DaySeven];
 
 const WeeklyMenuPlan = () => {
   return (
-    <div style={{display: "flex"}}>
+    <div style={{width: "100%"}}>
+    <div style={{display: "flex", paddingTop: "20px"}}>
       {testWeek.map((d) => (
         <div style={styles.oneday}>
           
@@ -162,6 +163,7 @@ const WeeklyMenuPlan = () => {
               </div> 
         </div>
       ))}
+    </div>
     </div>
   );
 };

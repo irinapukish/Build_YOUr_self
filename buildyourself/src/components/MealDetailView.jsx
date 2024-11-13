@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import meals from "./database.js";
+import meals from "../helpers/database.js";
 
 const MealDetailView = () => {
     const { mealId } = useParams();

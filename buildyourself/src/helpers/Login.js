@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const Login = () => {
+    const { loginUser } = useAuth();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        username: '',
         email: '',
         password: '',
     });
-
-    const [isRegistered, setIsRegistered] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,30 +18,25 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5001/register', formData);
+            const response = await axios.post('http://localhost:5001/login', formData);
             console.log(response.data);
-            setIsRegistered(true);
+            loginUser(response.data);
+
+            if (response.data.role === 'admin') {
+                navigate('/admin');
+            } else if (response.data.role === 'user') {
+                navigate('/userinfo');
+            }
         } catch (error) {
             console.error('There was an error!', error);
-            alert("Ten e-mail już zajęty");
-        }  
+        }
     };
 
     return (
-        <>
-        {!isRegistered && (
-          <div style={styles.container}>
-            <h2 style={styles.title}>Rejestracja</h2>
+        <div style={styles.container}>
+            <h2 style={styles.title}>Logowanie</h2>
+            <p style={styles.subtitle}>Witaj ponownie! Zaloguj się do swojego konta.</p>
             <form style={styles.field} onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder=" Nazwa Użytkownika"
-                    value={formData.username}
-                    onChange={handleChange}
-                    style={styles.input}
-                    required
-                />
                 <input
                     type="email"
                     name="email"
@@ -59,19 +55,16 @@ const Register = () => {
                     style={styles.input}
                     required
                 />
-                <button type="submit" style={styles.button}>Zarejestruj się</button>
+                <button type="submit" style={styles.button}>
+                    Zaloguj się
+                </button>
             </form>
-        </div>
-        )}
-        {isRegistered && (
-            <div style={styles.container}>
-            <h2 style={styles.title}>Rejestracja udana</h2>
+            <p>admin@admin.com</p>
+            <p>user@user.com</p>
             <p style={styles.registerText}>
-                Przejdż do logowania <a href="/login" style={styles.loginLink}> Zaloguj się</a>
+                Nie masz konta? <a href="/register" style={styles.registerLink}>Zarejestruj się</a>
             </p>
         </div>
-        )}
-    </>
     );
 };
 
@@ -90,8 +83,16 @@ const styles = {
       color: '#6b8f5e',
       fontSize: '24px',
       fontSize: '24px',
-      marginBottom: '30px'
+      marginBottom: '10px'
     },
+    subtitle: {
+      color: '#333',
+      marginBottom: '20px',
+    },
+    registerText: {
+        marginTop: "10px",
+        fontSize: "14px",
+      },
     field: {
       marginBottom: '15px',
       display: 'flex',
@@ -107,6 +108,11 @@ const styles = {
       paddingTop: '10px',
       paddingBottom: '10px',
     },
+    link: {
+      color: '#6b8f5e',
+      textDecoration: 'none',
+      fontSize: '14px',
+    },
     button: {
       width: '100%',
       backgroundColor: '#6b8f5e',
@@ -119,5 +125,6 @@ const styles = {
       paddingTop: '10px',
       paddingBottom: '10px'
     }
-}
-export default Register;
+  };
+  
+export default Login;

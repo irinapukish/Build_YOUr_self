@@ -21,7 +21,7 @@ const UserInfo = () => {
       </div>
         
       <div style={styles.info}>
-          <h3>Zapotrabowanie:</h3>
+          <h3>Zapotrzebowanie:</h3>
           <p>Kcal</p>
           <p>Białko</p>
           <p>Tłuszcz</p>

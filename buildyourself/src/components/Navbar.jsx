@@ -1,11 +1,7 @@
-import './App.css';
-import './index.css';
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-
 import { FaRegCircleUser } from "react-icons/fa6";
-import { useAuth } from './AuthContext';
-
+import { useAuth } from '../helpers/AuthContext';
 
   function Navbar() {
     const { user } = useAuth();
@@ -31,7 +27,7 @@ import { useAuth } from './AuthContext';
           <li>
             <Link to="/weeklymenuplan">Plan</Link>
           </li>
-            ) : null}
+          ) : null}
           <li>
               <Link to="/faq">Pytania/Odpowiedzi</Link>
           </li>
