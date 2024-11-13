@@ -40,16 +40,15 @@ const handleRemoveUser = async (userId) => {
 
     return (
       <div className="container">
-      <h1>Admin Dashboard</h1>
-      <h2>Users List</h2>
+        <h2>Lista użytkowników</h2>
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Username</th>
+            <th>Nazwa użytkownika</th>
             <th>Email</th>
-            <th>Role</th>
-            <th>Action</th>
+            <th>Rola</th>
+            <th>Akcja</th>
           </tr>
         </thead>
         <tbody>
@@ -64,7 +63,7 @@ const handleRemoveUser = async (userId) => {
                   onClick={() => handleRemoveUser(user._id)}
                   disabled={user.role === 'admin'}
                 >
-                  Remove User
+                  Usuń użytkownika
                 </button>
               </td>
             </tr>
