@@ -303,3 +303,34 @@ button:disabled {
 button:hover:not(:disabled) {
   background-color: #e63946;
 }
+
+.userInfoText {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.userInfoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e6ef;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 250px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}

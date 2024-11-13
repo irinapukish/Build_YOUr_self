@@ -48,8 +48,22 @@ function BmiCalculator() {
         adjustedCalories += 500; // Nadwyżka kaloryczna dla nabierania wagi
       }
 
-      setCalories(adjustedCalories.toFixed(2));
-      setIsSubmitted(true); // Ukryj formularz po obliczeniu
+    setCalories(adjustedCalories.toFixed(2));
+
+const userInfo = {
+  gender: gender,
+  age: age,
+  height: height,
+  weight: weight,
+  activity: activity,
+  goal: goal
+};
+const userIngoJSON = JSON.stringify(userInfo);
+localStorage.setItem("userInfo", userIngoJSON);
+
+localStorage.setItem("calories", adjustedCalories.toFixed(2));
+
+setIsSubmitted(true); // Ukryj formularz po obliczeniu
     } else {
       alert("Proszę wypełnić wszystkie pola.");
     }
@@ -191,8 +205,6 @@ const styles = {
     borderRadius: '4px',
     cursor: 'pointer',
   },
- 
-
 }
 
 export default BmiCalculator;
