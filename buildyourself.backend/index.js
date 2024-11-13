@@ -22,7 +22,39 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true }
 });
 
+const userDataSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    gender: { type: String, required: true },
+    age: { type: Number, required: true },
+    height: { type: Number, required: true },
+    weight: { type: Number, required: true },
+    activity: { type: String, required: true },
+    goal: { type: String, required: true },
+}, { timestamps: true });
+
+const UserData = mongoose.model('UserData', userDataSchema);
+module.exports = UserData;
+
 const User = mongoose.model('User', UserSchema);
+
+
+const authMiddleware = (req, res, next) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1];
+        if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+        try {
+            const decoded = jwt.verify(token, secretKey);
+            req.userId = decoded.id;
+            next();
+        } catch (error) {
+            res.status(403).json({ message: 'Invalid token' });
+        }
+    }
+    catch (error) {
+        res.status(403).json({ message: 'Invalid token' });
+    }
+};
 
 // Rejestracja użytkownika
 app.post('/register', async (req, res) => {
@@ -62,29 +94,43 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('/saveuserdata', authMiddleware, async (req, res) => {
+    const { gender, age, height, weight, activity, goal } = req.body;
 
-const authMiddleware = (req, res, next) => {
     try {
-        const token = req.headers.authorization.split(' ')[1];
-        if (!token) return res.status(401).json({ message: 'Unauthorized' });
+        const newUserData = new UserData({
+            userId: req.userId,  // The user ID from the authenticated request
+            gender,
+            age,
+            height,
+            weight,
+            activity,
+            goal,
+        });
 
-        try {
-            const decoded = jwt.verify(token, secretKey);
-            req.userId = decoded.id;
-            next();
-        } catch (error) {
-            res.status(403).json({ message: 'Invalid token' });
-        }
-    }
-    catch (error) {
-        res.status(403).json({ message: 'Invalid token' });
-    }
-};
+        await newUserData.save(); // Save the data to the database
 
-// Przykład chronionej trasy
-app.get('/protected-route', authMiddleware, (req, res) => {
-    res.json({ message: 'This is a protected route' });
+        res.status(201).json({ message: 'User data saved successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' });
+    }
 });
+
+app.get('/getuserdata', authMiddleware, async (req, res) => {
+    try {
+        const userData = await UserData.findOne({ userId: req.userId });
+
+        if (!userData) {
+            return res.status(404).json({ message: 'User data not found' });
+        }
+
+        res.status(200).json(userData);
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' });
+    }
+});
+
+
 
 
 // Start serwera

@@ -26,6 +26,19 @@ const UserSchema = new mongoose.Schema({
     role: { type: String, default: 'user' }
 });
 
+
+const userDataSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    gender: { type: String, required: true },
+    age: { type: Number, required: true },
+    height: { type: Number, required: true },
+    weight: { type: Number, required: true },
+    activity: { type: String, required: true },
+    goal: { type: String, required: true },
+}, { timestamps: true });
+
+const UserData = mongoose.model('UserData', userDataSchema);
+// module.exports = UserData;
 const User = mongoose.model('User', UserSchema);
 
 // Rejestracja użytkownika
@@ -125,6 +138,58 @@ app.delete('/admin/users/:id', authMiddleware, adminMiddleware, async (req, res)
         res.status(200).json({ message: 'User removed successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Error removing user' });
+    }
+});
+
+
+app.post('/saveuserdata', authMiddleware, async (req, res) => {
+    const { gender, age, height, weight, activity, goal } = req.body;
+
+    try {
+
+        const userData = await UserData.findOne({ userId: req.userId });
+
+        if (!userData) {
+            const newUserData = new UserData({
+                userId: req.userId,  // The user ID from the authenticated request
+                gender,
+                age,
+                height,
+                weight,
+                activity,
+                goal,
+            });
+    
+            await newUserData.save(); // Save the data to the database
+            res.status(201).json({ message: 'User data saved successfully' });
+        }
+        else {
+            userData.gender = gender;
+            userData.age = age;
+            userData.height = height;
+            userData.weight = weight;
+            userData.activity = activity;
+            userData.goal = goal;
+
+            await userData.save(); // Save the data to the database
+            res.status(201).json({ message: 'User data updated successfully' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' });
+    }
+});
+
+app.get('/getuserdata', authMiddleware, async (req, res) => {
+    try {
+        const userData = await UserData.findOne({ userId: req.userId });
+
+        if (!userData) {
+            return res.status(404).json({ message: 'User data not found' });
+        }
+
+        res.status(200).json(userData);
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' });
     }
 });
 
