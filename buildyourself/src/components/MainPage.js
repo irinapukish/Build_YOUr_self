@@ -8,6 +8,7 @@ const MainPage = () => {
       className="background-container"
       style={{ backgroundImage: `url(/images/mask-logo.svg)` }}>
       <h1 ref={sectionRef}>Kalkulator kalorii</h1>
+      <h3>Wpisz swoje dane, żeby obliczyć zapotrzebowanie kaloryczne</h3>
       <BmiCalculator />
     </div>
   );
