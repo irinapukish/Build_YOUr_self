@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaRegCircleUser } from "react-icons/fa6";
 import { useAuth } from '../helpers/AuthContext';
 
   function Navbar() {
+    const location = useLocation();
+    const isActive = (path) => location.pathname === path;
     const { user } = useAuth();
 
     return (
@@ -11,28 +13,31 @@ import { useAuth } from '../helpers/AuthContext';
         <img style={{width:250, boxShadow: 'none'}} src='./images/logo.jpg'></img>
         <ul>
           <li>
-            <Link to="/">Strona główna</Link>
+            <Link to="/" className={isActive('/') ? 'active' : ''}>Strona główna</Link>
           </li>
           {user?.role === 'admin' ? (
             <li>
-                <Link to="/admin">Lista użytkowników</Link>
+                <Link to="/admin" className={isActive('/admin') ? 'active' : ''}>Lista użytkowników</Link>
               </li>
             ) : null}
             {user?.role === 'user'? (
             <li>
-                <Link to="/userinfo">Pokój osobisty</Link>
+                <Link to="/userinfo" className={isActive('/userinfo') ? 'active' : ''}>Pokój osobisty</Link>
               </li>
             ) : null}
             {user?.role === 'user' ? (
           <li>
-            <Link to="/weeklymenuplan">Plan</Link>
+            <Link to="/weeklymenuplan" className={isActive('/weeklymenuplan') ? 'active' : ''}>Plan</Link>
           </li>
           ) : null}
           <li>
-              <Link to="/faq">Pytania/Odpowiedzi</Link>
+              <Link to="/faq" className={isActive('/faq') ? 'active' : ''}>Pytania/Odpowiedzi</Link>
           </li>
           <li>
-            <Link to="/article">Blog</Link>
+            <Link to="/article" className={isActive('/article') ? 'active' : ''}>Blog</Link>
+          </li>
+          <li>
+            <a href="https://forms.gle/Ug1nsYk9QxVHrGHC9" target="_blank" rel="noopener noreferrer">Kontakt</a>
           </li>
           <li style={colorIcon}>
             
