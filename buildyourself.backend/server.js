@@ -75,7 +75,7 @@ app.post('/login', async (req, res) => {
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) return res.status(400).json({ message: 'Invalid credentials' });
 
-        const token = jwt.sign({ id: user._id, role: user.role }, secretKey, { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id, role: user.role }, secretKey, { expiresIn: '1d' });
 
         // Return role along with token
         res.status(200).json({ token, userId: user._id, role: user.role });
