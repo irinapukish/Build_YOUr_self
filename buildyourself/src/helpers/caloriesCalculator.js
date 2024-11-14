@@ -31,3 +31,4 @@ const CalculateCalories = (weight, height, age, gender, goal, activity) => {
 };
 
 export default CalculateCalories;
+

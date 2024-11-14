@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../helpers/AuthContext";
 import CalculateCalories from "../helpers/caloriesCalculator";
+import CalculateMacros from "../helpers/macrosCalculator";
+import { convertUserInfoDtoToUserInfo, convertUserInfoToUserInfoViewModel} from "../helpers/modelConverterCommonHelper"
 
 const UserInfo = () => {
   const { user } = useAuth();
@@ -13,92 +15,6 @@ const UserInfo = () => {
 
   console.log(userInfo);
 
-  // Funkcja do obliczenia makroskładników na podstawie kalorii i celu
-  const calculateMacros = (calories, goal) => {
-    let proteinPercentage, fatPercentage, carbPercentage;
-
-    if (goal === "lose") {
-      proteinPercentage = 0.3;
-      fatPercentage = 0.25;
-      carbPercentage = 0.45;
-    } else if (goal === "maintain") {
-      proteinPercentage = 0.25;
-      fatPercentage = 0.3;
-      carbPercentage = 0.45;
-    } else if (goal === "gain") {
-      proteinPercentage = 0.2;
-      fatPercentage = 0.25;
-      carbPercentage = 0.55;
-    }
-
-    const protein = ((calories * proteinPercentage) / 4).toFixed(1);
-    const fat = ((calories * fatPercentage) / 9).toFixed(1);
-    const carbs = ((calories * carbPercentage) / 4).toFixed(1);
-
-    return { protein, fat, carbs };
-  };
-
-  function convertUserInfoToUserInfoViewModel(userInfo) {
-    const userInfoViewModel = {
-      gender: null,
-      age: userInfo.age,
-      height: userInfo.height,
-      weight: userInfo.weight,
-      activity: null,
-      goal: null,
-    };
-
-    //gender
-    if (userInfo.gender === "male") {
-      userInfoViewModel.gender = "Mężczyzna";
-    }
-    if (userInfo.gender === "female") {
-      userInfoViewModel.gender = "Kobieta";
-    }
-
-    //activity
-    if (userInfo.activity === "1") {
-      userInfoViewModel.activity = "Brak aktywności fizycznej";
-    }
-    if (userInfo.activity === "2") {
-      userInfoViewModel.activity = "Lekko aktywny";
-    }
-    if (userInfo.activity === "3") {
-      userInfoViewModel.activity = "Średnia aktywność";
-    }
-    if (userInfo.activity === "4") {
-      userInfoViewModel.activity = "Wysoka aktywność";
-    }
-    if (userInfo.activity === "5") {
-      userInfoViewModel.activity = "Bardzo wysoka aktywność";
-    }
-
-    //goal
-    if (userInfo.goal === "lose") {
-      userInfoViewModel.goal = "Utrata wagi";
-    }
-    if (userInfo.goal === "maintain") {
-      userInfoViewModel.goal = "Utrzymanie wagi";
-    }
-    if (userInfo.goal === "gain") {
-      userInfoViewModel.goal = "Nabieranie wagi";
-    }
-
-    return userInfoViewModel;
-  }
-
-  function convertUserInfoDtoToUserInfo(userInfoDto) {
-    const userInfo = {
-      gender: userInfoDto.gender,
-      age: userInfoDto.age,
-      height: userInfoDto.height,
-      weight: userInfoDto.weight,
-      activity: userInfoDto.activity,
-      goal: userInfoDto.goal,
-    };
-
-    return userInfo;
-  }
 
   async function saveUserInfo() {
     try {
@@ -158,7 +74,7 @@ const UserInfo = () => {
         userInfo.activity
       );
       setCalories(calories);
-      setMacros(calculateMacros(calories, userInfo.goal));
+      setMacros(CalculateMacros(calories, userInfo.goal));
     }
   }, [userInfo]);
 
