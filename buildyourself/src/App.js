@@ -27,10 +27,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          {/* Menu nawigacyjne */}
           <Navbar />
-
-          {/* Definiujemy ścieżki do stron */}
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/faq" element={<FAQ />} />
@@ -45,16 +42,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/weeklymenuplan" element={<WeeklyMenuPlan />} />
-            <Route
-              path="/mealdetailview/:mealId"
-              element={<MealDetailView />}
-            />
+            <Route path="/mealdetailview/:mealId" element={<MealDetailView />} />
             <Route element={<ProtectedRoute roles={["user", "admin"]} />}>
-              <Route path="/userinfo" element={<UserInfo />} />
-            </Route>
+              <Route path="/userinfo" element={<UserInfo />} /></Route>
             <Route element={<ProtectedRoute roles={["admin"]} />}>
-              <Route path="/admin" element={<AdminDashboard />} />
-            </Route>
+              <Route path="/admin" element={<AdminDashboard />} /></Route>
           </Routes>
         </Router>
       </AuthProvider>

@@ -111,10 +111,6 @@ const adminMiddleware = (req, res, next) => {
     next();
 };
 
-// Przykład chronionej trasy
-app.get('/protected-route', authMiddleware, (req, res) => {
-    res.json({ message: 'This is a protected route' });
-});
 
 app.get('/admin/users', authMiddleware, adminMiddleware, async (req, res) => {
     try {
