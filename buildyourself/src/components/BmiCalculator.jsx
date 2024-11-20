@@ -22,11 +22,11 @@ function BmiCalculator() {
 
       let bmr;
 
-      // Obliczanie BMR (Basal Metabolic Rate) na podstawie wzoru Harrisa-Benedicta
+      // Obliczanie BMR (Basal Metabolic Rate) na podstawie wzoru Mifflina
       if (gender === 'male') {
-        bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
       } else if (gender === 'female') {
-        bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
       }
 
       // Mnożnik aktywności
